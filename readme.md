@@ -7,7 +7,7 @@
 ---
 ### VirtualHost.sh
 - CLI da line 
-    - Crea nuovo host con impostazione di default
+     - Crea nuovo host con impostazione di default
      - Crea nuovo host con impostazioni personalizzate
      - Disabilita un host temporaneamente (sarà solamente disabilitato l'host)
      - Disabilita un host permanentemente (sarà cancellato il file .conf del relativo host e disabilitato)
