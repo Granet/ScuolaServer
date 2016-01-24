@@ -16,7 +16,7 @@ echo -e "\e[32;44m[3]\e[0m - Disabilita un host temporaneamente (sarà solamente
 echo -e "\e[32;44m[4]\e[0m - Disabilita un host permanentemente (sarà cancellato il file .conf del relativo host e disabilitato) ."
 echo -e "\e[32;44m[5]\e[0m - Cancella in modo irreversibile i file di un relativo host e disabilitarlo."
 echo ""
-echo -e "\e[32;44m[6]\e[0m - Crea nuovo con impostazioni di default da file."
+echo -e "\e[32;44m[6]\e[0m - Crea nuovo host con impostazioni di default da file."
 echo -e "\e[32;44m[7]\e[0m - Disabilita un host temporaneamente (sarà solamente disabilitato l'host) da file."
 echo -e "\e[32;44m[8]\e[0m - Disabilita un host permanentemente (sarà cancellato il file .conf del relativo host e disabilitato) da file."
 echo -e "\e[32;44m[9]\e[0m - Cancella in modo irreversibile i file di un relativo host e disabilitarlo da file."
@@ -148,10 +148,17 @@ function delete_perm_file(){
 		done < users.txt
 }
 
+function credits(){
+	clear
+	echo -e "\e[43mScript realizzato da Francesco Russo aka(Granet) anno 2015-2016 V B Informatica. Progetto scolastico abbbusivo in compagnia del Prof. Saro Messina e del collega Concetto Pollicina\e[0m"
+	echo ""
+	echo -e "\e[41m Premi INVIO per continuare...\e[0m"
+	read
+}
 
 
 selection=
-until [ "$selection" = "0" ]; do
+until [ "$selection" = "11" ]; do
 print_menu
 read selection
 echo ""
@@ -165,6 +172,7 @@ case $selection in
 7 ) dis_temp_file;clear; print_menu ;;
 8 ) dis_perm_file;clear;print_menu ;;
 9 ) delete_perm_file;clear;print_menu ;;
+0 ) credits;clear;print_menu ;;
 10 ) exit ;;
 * ) echo -e "Per favore inserisci 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 o 0"
 esac
